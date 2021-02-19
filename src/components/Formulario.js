@@ -6,13 +6,7 @@ const Boton = styled.button`
 `;
 
 
-const Formulario = () => {
-
-    // State del formulario
-    const [busqueda, setBusqueda] = useState({
-        ciudad: '',
-        pais: ''
-    });
+const Formulario = ({ busqueda, setBusqueda, setConsultar }) => {
 
     // Validar con el state de error
     const [error, setError] = useState(false)
@@ -40,6 +34,8 @@ const Formulario = () => {
         }
 
         setError(false);
+
+        setConsultar(true)
     }
 
     return (
