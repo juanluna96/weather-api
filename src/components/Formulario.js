@@ -35,7 +35,7 @@ const Formulario = ({ busqueda, setBusqueda, setConsultar }) => {
 
         setError(false);
 
-        setConsultar(true)
+        setConsultar(true);
     }
 
     return (
@@ -61,7 +61,7 @@ const Formulario = ({ busqueda, setBusqueda, setConsultar }) => {
                 <label htmlFor="pais">País:</label>
             </div>
             <div className="input-field col s12">
-                <Boton className="waves-effect waves-light btn-large btn-block yellow accent-4 black-text text-darken-2" type="submit" onClick={ handleSubmit }>Buscar clima
+                <Boton className="waves-effect waves-light btn-large btn-block yellow accent-4 black-text text-darken-2" type="submit">Buscar clima
                     <i className="material-icons right">send</i>
                 </Boton>
             </div>

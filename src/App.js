@@ -15,7 +15,13 @@ function App() {
 
   useEffect(() => {
     const consultarApi = async () => {
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=cc4c0d8af0a3da64230b43b9244e35ae`;
+      if (consultar) {
+        const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=cc4c0d8af0a3da64230b43b9244e35ae`;
+        const respuesta = await fetch(url);
+        const resultado = await respuesta.json();
+
+        console.log(resultado);
+      }
     }
     consultarApi();
   }, [consultar]);
