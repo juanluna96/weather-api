@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Error from './Error';
 import styled from '@emotion/styled';
 
 const Boton = styled.button`
@@ -41,7 +42,7 @@ const Formulario = ({ busqueda, setBusqueda, setConsultar }) => {
     return (
         <form onSubmit={ handleSubmit }>
             {error
-                ? (<p className="red darken-4 error">Todos los campos son obligatorios</p>)
+                ? (<Error mensaje="Todos los campos son obligatorios"></Error>)
                 : null }
             <div className="input-field col s12">
                 <input type="text" name="ciudad" id="ciudad" className="validate" value={ ciudad } onChange={ handleChange } />
