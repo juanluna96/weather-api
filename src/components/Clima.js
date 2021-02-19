@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from 'react'
 
 const Clima = ({ resultado }) => {
@@ -10,7 +11,7 @@ const Clima = ({ resultado }) => {
 
     return (
         <div className="row">
-            <div className="col s12 m4 l4">
+            <div className="col s12">
                 <div className="card-panel white black-text">
                     <h2>El clima de { name } es:</h2>
                     <p className="temperatura">
@@ -26,6 +27,17 @@ const Clima = ({ resultado }) => {
             </div>
         </div>
     )
+}
+
+Clima.propTypes = {
+    resultado: PropTypes.shape({
+        main: PropTypes.shape({
+            temp: PropTypes.number,
+            temp_max: PropTypes.number,
+            temp_min: PropTypes.number
+        }),
+        name: PropTypes.string
+    })
 }
 
 export default Clima

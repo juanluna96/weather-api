@@ -4,6 +4,15 @@ import Formulario from './components/Formulario';
 import Clima from './components/Clima';
 import Error from './components/Error';
 
+import styled from '@emotion/styled';
+
+const Cuerpo = styled.div`
+  @media (min-width: 992px) {
+    height: 100vh;
+  }
+`;
+
+
 function App() {
   // State del formulario
   const [busqueda, setBusqueda] = useState({
@@ -49,7 +58,7 @@ function App() {
   return (
     <Fragment>
       <Header titulo="Clima react app"></Header>
-      <div className="contenedor-form">
+      <Cuerpo className="contenedor-form">
         <div className="container">
           <div className="row">
             <div className="col m6 s12">
@@ -60,7 +69,7 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </Cuerpo>
     </Fragment >
   );
 }

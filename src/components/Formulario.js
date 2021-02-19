@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { useState } from 'react'
 import Error from './Error';
 import styled from '@emotion/styled';
@@ -68,6 +69,19 @@ const Formulario = ({ busqueda, setBusqueda, setConsultar }) => {
             </div>
         </form>
     )
+}
+
+Formulario.propTypes = {
+    busqueda: PropTypes.shape({
+        ciudad: PropTypes.shape({
+            trim: PropTypes.func
+        }),
+        pais: PropTypes.shape({
+            trim: PropTypes.func
+        })
+    }),
+    setBusqueda: PropTypes.func,
+    setConsultar: PropTypes.func
 }
 
 export default Formulario
